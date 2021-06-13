@@ -40,6 +40,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import "../style/TopNavigate.scss";
-</style>
+<style lang="scss" scoped src="../style/TopNavigate.scss"></style>
