@@ -19,6 +19,9 @@
 
   .navigate__button {
     color: $blue;
+    border: none;
+    outline: none;
+    background: none;
     transition: transform, 0.3s;
   }
 
@@ -26,7 +29,7 @@
     transform: scale(1.4);
   }
 
-  @mixin menu_state($opacity) {
+  .navigate__options {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -42,15 +45,11 @@
     z-index: 100;
     font-size: 18px;
     transition: opacity 0.5s ease-in-out;
-    opacity: $opacity;
-  }
+    opacity: 0;
 
-  .open {
-    @include menu_state(1);
-  }
-
-  .navigate__options {
-    @include menu_state(0);
+    &.open {
+      opacity: 1;
+    }
   }
 
   .navigate__options--item {

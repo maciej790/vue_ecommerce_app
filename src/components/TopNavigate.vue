@@ -3,15 +3,15 @@
     <div class="navigate__logo">
       <i class="fas fa-store-alt fa-2x"></i>
     </div>
-    <div class="navigate__button" @click="isClicked = !isClicked">
+    <button class="navigate__button" @click="isNavOpen = !isNavOpen">
       <i class="fas fa-ellipsis-h fa-2x"></i>
-    </div>
-    <ul :class="isClicked ? 'open' : 'navigate__options'">
+    </button>
+    <ul :class="['navigate__options', { open: isNavOpen }]">
       <li
         class="navigate__options--item"
         v-for="(item, index) in menuItems"
         :key="index"
-        @click="isClicked = !isClicked"
+        @click="isNavOpen = !isNavOpen"
       >
         {{ item }}
       </li>
@@ -30,11 +30,11 @@ export default {
 
   setup() {
     const menuItems = ['electronics', 'jewelery', "men's clothing", "women's clothing"];
-    const isClicked = ref(false);
+    const isNavOpen = ref(false);
 
     return {
       menuItems,
-      isClicked,
+      isNavOpen,
     };
   },
 };
