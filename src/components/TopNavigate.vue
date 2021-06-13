@@ -8,7 +8,7 @@
     </button>
     <ul :class="['navigate__options', { open: isNavOpen }]">
       <li
-        class="navigate__options--item"
+        class="navigate__item"
         v-for="(item, index) in menuItems"
         :key="index"
         @click="isNavOpen = !isNavOpen"
